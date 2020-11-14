@@ -4,7 +4,7 @@ var elInputName = $('.js-input-name', elFormContact);
 var elInputLastname = $('.js-input-lastname', elFormContact);
 var elInputContact = $('.js-input-contact', elFormContact);
 var elInputRelationship = $('.js-input-relationship', elFormContact);
-
+var elResultBoxContact = $('.js-result-box-contact');
 
 // Create empty array
 var contactArray = [];
