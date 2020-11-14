@@ -10,7 +10,64 @@
 </head>
 
 <body>
+  <h1 class="sr-only">Page to add contact</h1>
 
+  <div class="container pt-3">
+
+    <!-- Main heading -->
+    <h2 class="h3 text-center">Add new contact</h2>
+
+    <!-- Main wrapper -->
+    <div class="main-wrapper row justify-content-between">
+
+      <!-- ====================
+      Main Contact Form
+      ==================== -->
+      <form class="js-form-contact col-5" autocomplete="off" spellcheck="false" action="https://echo.htmlacademy.ru/"
+        method="POST">
+
+        <!-- Name input -->
+        <div class="form-group">
+          <label for="user_name">Enter name:</label>
+          <input class="js-input-name form-control" type="text" name="user_name" id="user_name" placeholder="name"
+            minlength="3" required>
+        </div>
+
+        <!-- Lastname input -->
+        <div class="form-group">
+          <label for="user_lastname">Enter lastname:</label>
+          <input class="js-input-lastname form-control" type="text" name="user_lastname" id="user_lastname"
+            placeholder="lastname" minlength="3" required>
+        </div>
+
+        <!-- Contact input -->
+        <div class="form-group">
+          <label for="user_contact">Enter contact:</label>
+          <input class="js-input-contact form-control" type="tel" name="user_contact" id="user_contact"
+            placeholder="contact" required>
+        </div>
+
+        <!-- Relationship input -->
+        <div class="form-group">
+          <label for="user_relationship">Enter relationship:</label>
+          <input class="js-input-relationship form-control" type="tel" name="user_relationship" id="user_relationship"
+            placeholder="relationship" required>
+        </div>
+
+        <!-- Confirm submit button -->
+        <button class="btn btn-block btn-primary" type="submit">Confirm</button>
+
+      </form>
+
+
+      <!-- =====================
+      Result Box
+      ===================== -->
+
+
+    </div><!-- main-wrapper -->
+
+  </div><!-- container -->
 
 
 
