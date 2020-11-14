@@ -43,25 +43,30 @@ var addContact = function (evt) {
   // Loop to create elements and add all info
   for (let i = 0; i < contactArray.length; i++) {
 
+    // New ul
     var elNewList = document.createElement('ul');
     elNewList.classList.add('list-group', 'list-unstyled', 'mb-3');
     elResultBoxContact.appendChild(elNewList);
 
+    // Name
     var elNewNameLi = document.createElement('li');
     elNewNameLi.textContent = `Name: ${contactArray[i].name}`;
     elNewNameLi.classList.add('list-group-item');
     elNewList.appendChild(elNewNameLi);
 
+    // Lastname
     var elNewLastnameLi = document.createElement('li');
     elNewLastnameLi.textContent = `Lastname: ${contactArray[i].lastname}`;
     elNewLastnameLi.classList.add('list-group-item');
     elNewList.appendChild(elNewLastnameLi);
 
+    // Contact
     var elNewContactLi = document.createElement('li');
     elNewContactLi.textContent = `Contact: ${contactArray[i].contact}`;
     elNewContactLi.classList.add('list-group-item');
     elNewList.appendChild(elNewContactLi);
 
+    // Relationship
     var elNewRelationshipLi = document.createElement('li');
     elNewRelationshipLi.textContent = `Relationship: ${contactArray[i].relationship}`;
     elNewRelationshipLi.classList.add('list-group-item', 'list-group-action');
