@@ -39,14 +39,10 @@ var addContact = function () {
   contactObject.contact = inputContact;
   contactObject.relationship = inputRelationship;
 
-
   elResultName.textContent = contactObject.name;
   elResultLastname.textContent = contactObject.lastname;
   elResultContact.textContent = contactObject.contact;
   elResultRelationship.textContent = contactObject.relationship;
-
-
-
 
 }
 
