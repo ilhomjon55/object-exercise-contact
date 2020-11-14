@@ -4,23 +4,15 @@ var elInputName = $('.js-input-name', elFormContact);
 var elInputLastname = $('.js-input-lastname', elFormContact);
 var elInputContact = $('.js-input-contact', elFormContact);
 var elInputRelationship = $('.js-input-relationship', elFormContact);
-// Get result elements
-var elResultBoxContact = $('.js-result-box-contact');
-var elResultName = $('.js-result-name', elResultBoxContact);
-var elResultLastname = $('.js-result-lastname', elResultBoxContact);
-var elResultContact = $('.js-result-contact', elResultBoxContact);
-var elResultRelationship = $('.js-result-relationship', elResultBoxContact);
 
 
-var contactObject = {
-  name: '',
-  lastname: '',
-  contact: '',
-  relationship: ''
-};
+// Create empty array
+var contactArray = [];
 
 
-var addContact = function () {
+// Main function
+var addContact = function (evt) {
+  evt.preventDefault();
 
   // Get trimmed values from inputs
   var inputName = elInputName.value.trim();
@@ -34,28 +26,54 @@ var addContact = function () {
     return;
   }
 
-  contactObject.name = inputName;
-  contactObject.lastname = inputLastname;
-  contactObject.contact = inputContact;
-  contactObject.relationship = inputRelationship;
 
-  elResultName.textContent = contactObject.name;
-  elResultLastname.textContent = contactObject.lastname;
-  elResultContact.textContent = contactObject.contact;
-  elResultRelationship.textContent = contactObject.relationship;
+  // Push contact objects to array
+  contactArray.push({
+    name: inputName,
+    lastname: inputLastname,
+    contact: inputContact,
+    relationship: inputRelationship
+  });
+
+
+  // Empty elResultBoxContact
+  elResultBoxContact.innerHTML = '';
+
+
+  // Loop to create elements and add all info
+  for (let i = 0; i < contactArray.length; i++) {
+
+    var elNewList = document.createElement('ul');
+    elNewList.classList.add('list-group', 'list-unstyled', 'mb-3');
+    elResultBoxContact.appendChild(elNewList);
+
+    var elNewNameLi = document.createElement('li');
+    elNewNameLi.textContent = `Name: ${contactArray[i].name}`;
+    elNewNameLi.classList.add('list-group-item');
+    elNewList.appendChild(elNewNameLi);
+
+    var elNewLastnameLi = document.createElement('li');
+    elNewLastnameLi.textContent = `Lastname: ${contactArray[i].lastname}`;
+    elNewLastnameLi.classList.add('list-group-item');
+    elNewList.appendChild(elNewLastnameLi);
+
+    var elNewContactLi = document.createElement('li');
+    elNewContactLi.textContent = `Contact: ${contactArray[i].contact}`;
+    elNewContactLi.classList.add('list-group-item');
+    elNewList.appendChild(elNewContactLi);
+
+    var elNewRelationshipLi = document.createElement('li');
+    elNewRelationshipLi.textContent = `Relationship: ${contactArray[i].relationship}`;
+    elNewRelationshipLi.classList.add('list-group-item', 'list-group-action');
+    elNewList.appendChild(elNewRelationshipLi);
+  }
+
 
 }
 
-console.log(contactObject);
 
+// Add function to submit event of elFormContact
+elFormContact.addEventListener('submit', addContact);
 
-// Prevent submit default from form
-elFormContact.addEventListener('submit', function (evt) {
-  evt.preventDefault();
-})
-
-
-elInputName.addEventListener('change', addContact);
-elInputLastname.addEventListener('change', addContact);
-elInputContact.addEventListener('change', addContact);
-elInputRelationship.addEventListener('change', addContact);
+/* Just for reference */
+console.log(contactArray);

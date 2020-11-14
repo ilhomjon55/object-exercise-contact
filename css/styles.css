@@ -40,3 +40,7 @@
  .site-content {
    flex-grow: 1;
  }
+
+ .result-box-contact {
+   height: 75vh;
+ }
