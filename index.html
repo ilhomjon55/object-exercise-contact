@@ -12,10 +12,10 @@
 <body>
   <h1 class="sr-only">Page to add contact</h1>
 
-  <div class="container pt-3">
+  <div class="container">
 
     <!-- Main heading -->
-    <h2 class="h3 text-center">Add new contact</h2>
+    <h2 class="h3 text-center my-4">Add new contact</h2>
 
     <!-- Main wrapper -->
     <div class="main-wrapper row justify-content-between">
@@ -23,7 +23,7 @@
       <!-- ====================
       Main Contact Form
       ==================== -->
-      <form class="js-form-contact col-5" autocomplete="off" spellcheck="false" action="https://echo.htmlacademy.ru/"
+      <form class="js-form-contact col-6" autocomplete="off" spellcheck="false" action="https://echo.htmlacademy.ru/"
         method="POST">
 
         <!-- Name input -->
@@ -44,7 +44,7 @@
         <div class="form-group">
           <label for="user_contact">Enter contact:</label>
           <input class="js-input-contact form-control" type="tel" name="user_contact" id="user_contact"
-            placeholder="contact" required>
+            placeholder="contact" pattern="^(?:\d{10,12}|\+\d{10,12}|\w+@\w+\.\w{2,4})$" required>
         </div>
 
         <!-- Relationship input -->
@@ -63,7 +63,33 @@
       <!-- =====================
       Result Box
       ===================== -->
+      <div class="js-result-box-contact col-6 border-left">
 
+        <!-- Result name -->
+        <div class="form-group">
+          <span class="ml-1">Name:</span>
+          <span class="js-result-name"></span>
+        </div>
+
+        <!-- Result Lastname -->
+        <div class="form-group">
+          <span class="ml-1">Lastname:</span>
+          <span class="js-result-lastname"></span>
+        </div>
+
+        <!-- Result contact -->
+        <div class="form-group">
+          <span class="ml-1">Contact:</span>
+          <span class="js-result-contact"></span>
+        </div>
+
+        <!-- Result relationship -->
+        <div class="form-group">
+          <span class="ml-1">Relationship:</span>
+          <span class="js-result-relationship"></span>
+        </div>
+
+      </div>
 
     </div><!-- main-wrapper -->
 
@@ -74,6 +100,7 @@
 
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/reference.js"></script>
   <script src="js/scripts.js"></script>
 </body>
 
