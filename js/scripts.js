@@ -22,7 +22,8 @@ var addContact = function (evt) {
 
 
   // Prevent empty value
-  if (!inputName || !inputLastname || !inputContact || !inputRelationship) {
+  var isEmpty = !inputName || !inputLastname || !inputContact || !inputRelationship
+  if (isEmpty) {
     return;
   }
 
