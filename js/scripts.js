@@ -75,6 +75,13 @@ var addContact = function (evt) {
   }
 
 
+  // Empty inputs
+  elInputName.value = '';
+  elInputLastname.value = '';
+  elInputContact.value = '';
+  elInputRelationship.value = '';
+
+
 }
 
 
